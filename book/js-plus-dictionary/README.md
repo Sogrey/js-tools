@@ -1,17 +1,17 @@
 # js-plus-dictionary.js 字典
 
-## add 增/改
+### add 增/改
 
-## remove 删
+### remove 删
 
-## find 查
+### find 查
 
-## isExist 判断是否存在
+### isExist 判断是否存在
 
-## showAll 显示所有
+### showAll 显示所有
 
-## count 计数
+### count 计数
 
-## clear 清空
+### clear 清空
 
-## isEmpty 是否为空
+### isEmpty 是否为空
