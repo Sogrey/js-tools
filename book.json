@@ -43,7 +43,7 @@
 		"sharing": {
 			"weibo": true,
 			"facebook": true,
-			"twitter": true,
+			"twitter": false,
 			"google": true,
 			"instapaper": false,
 			"vk": false,
