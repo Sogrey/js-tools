@@ -29,8 +29,8 @@
 		     "showLevel": true
 		},
 		"favicon": {
-			"shortcut": "https://sogrey.github.io/favicon.ico",
-			"bookmark": "https://sogrey.github.io/favicon.ico"
+			"shortcut": "favicon.ico",
+			"bookmark": "favicon.ico"
 		},
 		"github": {
 			"url": "https://github.com/Sogrey"
