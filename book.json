@@ -22,11 +22,16 @@
 		"github",
 		"tbfed-pagefooter",
 		"toggle-chapters",
-		"sectionx"
+		"sectionx",
+		"emphasize"
 	],
 	"pluginsConfig": {
 		"theme-default": {
 		     "showLevel": true
+		},"fontsettings": {
+			"theme": "sepia",
+			"family": "serif",
+			"size":  1
 		},
 		"favicon": {
 			"shortcut": "favicon.ico",

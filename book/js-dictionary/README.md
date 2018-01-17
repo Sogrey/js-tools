@@ -44,29 +44,134 @@ js-dictionary.js 是将字典的一个简单封装，源码在这:[传送门](ht
 一下对外放出几个常用的方法方便字典的增删改查操作。
 
 | 方法名| 描述|
-|:------:|:-----:|
-|add| 增/改|
-|remove| 删|
-|find| 查|
-|isExist| 判断是否存在|
-|showAll| 显示所有|
-|count| 计数|
-|clear| 清空|
-|isEmpty| 是否为空|
+|:------|:-----|
+|[add](#add-增改)| 增/改|
+|[remove](#remove-删)| 删|
+|[find](#find-查)| 查|
+|[isExist](#isexist-判断是否存在)| 判断是否存在|
+|[showAll](#showall-显示所有)| 显示所有|
+|[count](#count-计数)| 计数|
+|[clear](#clear-清空)| 清空|
+|[isEmpty](#isempty-是否为空)| 是否为空|
 
 
 ### add 增/改
 
+{% em color="#dddddd" %}function{% endem %} add(key,value)
+
+参数：
+
+* key 
+* value
+
+返回：
+
+* 无
+
+向字典内添加键值对，若已存在指定key，则覆盖原值更新。
+
 ### remove 删
+
+{% em color="#dddddd" %}function{% endem %} remove(key)
+
+参数：
+
+* key 
+
+返回：
+
+* 无
+
+移除字典指定key。
 
 ### find 查
 
+{% em color="#dddddd" %}function{% endem %} find(key)
+
+参数：
+
+* key 
+
+返回：
+
+* value 指定键对应值
+
+查询字典指定key对应值。
+
 ### isExist 判断是否存在
+
+{% em color="#dddddd" %}function{% endem %} isExist(key)
+
+参数：
+
+* key 
+
+返回：
+
+* boolean true存在，false不存在
+
+判断字典内是否存在指定key。
 
 ### showAll 显示所有
 
+{% em color="#dddddd" %}function{% endem %} showAll()
+
+参数：
+
+* 无参
+
+返回：
+
+* 无
+
+把字典里所有键值对打印出来。
+
 ### count 计数
+
+{% em color="#dddddd" %}function{% endem %} count()
+
+参数：
+
+* 无参
+
+返回：
+
+* int 字典长度
+
+由于字典没有`length`属性,获取`length`为`0`，因此不能使用`length`来获取一个字典的长度，可使用`for-in`遍历的方式获取长度：
+
+``` javascript
+    var n = 0;
+    for (var key in Object.keys(this.datastore)) {
+        ++n;
+    }
+    console.log("字典长度：" + n);
+```
 
 ### clear 清空
 
+{% em color="#dddddd" %}function{% endem %} clear()
+
+参数：
+
+* 无参
+
+返回：
+
+* 无
+
+删除字典元素可使用`delete` 来删除。
+
 ### isEmpty 是否为空
+
+{% em color="#dddddd" %}function{% endem %} isEmpty()
+
+参数：
+
+* 无参
+
+返回：
+
+* boolean true为空，false不为空
+
+判断字典是否为空，可判断其长度[count()](#count-计数)是否为0，大于0既不为空。
