@@ -4,4 +4,4 @@ js 工具集
 
 
 
-* [js-plus-dictionary.js](book/js-plus-dictionary/README.md)
+* [js-dictionary.js](book/js-dictionary/README.md)

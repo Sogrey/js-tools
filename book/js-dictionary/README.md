@@ -1,4 +1,4 @@
-# js-plus-dictionary.js 字典
+# js-dictionary.js 字典
 
 Javascript 的数组Array,既是一个数组，也是一个字典(Dictionary)。
 
@@ -39,7 +39,7 @@ console.log(dic["a"]);
 >Apple 
 ```
 
-js-plus-dictionary.js 是将字典的一个简单封装，源码在这:[传送门](https://github.com/Sogrey/js-tools/blob/master/js/js-plus-dictionary.js)
+js-dictionary.js 是将字典的一个简单封装，源码在这:[传送门](https://github.com/Sogrey/js-tools/blob/master/js/js-dictionary.js)
 
 一下对外放出几个常用的方法方便字典的增删改查操作。
 
