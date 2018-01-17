@@ -1,7 +1,7 @@
 # Summary
 * [前言](README.md)
 * [js-plus-dictionary.js](book/js-plus-dictionary/README.md)
-    * [add](book/js-plus-dictionary/README.md#add-增/改)
+    * [add](book/js-plus-dictionary/README.md#add-增改)
     * [remove](book/js-plus-dictionary/README.md#remove-删)
     * [find](book/js-plus-dictionary/README.md#find-查)
     * [isExist](book/js-plus-dictionary/README.md#isexist-判断是否存在)
