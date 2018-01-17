@@ -25,6 +25,9 @@
 		"sectionx"
 	],
 	"pluginsConfig": {
+		"theme-default": {
+		     "showLevel": true
+		},
 		"favicon": {
 			"shortcut": "favicon.ico",
 			"bookmark": "favicon.ico"
