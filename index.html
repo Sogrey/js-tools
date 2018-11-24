@@ -3,9 +3,9 @@
 <body>
 
     <!-- <script src="./js/dictionary.js"/> -->
-    <script type="text/javascript"  src="./js/js-plus-dictionary.js"></script>
-    <script type="text/javascript"  src="./js/js-plus-MD5.js"></script>
-    
+    <script type="text/javascript"  src="./js/js-dictionary.js"></script>
+    <script type="text/javascript"  src="./js/js-MD5.js"></script>
+    <script type="text/javascript"  src="./js/js-cookieUtil.js"></script>
     <!-- <script>
     var pbook = new Dictionary();
 pbook.add("Mike", "723");pbook.add("Mike", "733");
@@ -22,5 +22,14 @@ console.log(!!pbook.datastore["Mik2e"])
 console.log(pbook.isExist("Mik2e"))
 alert(pbook.isExist("Mik2e"))
     </script> -->
+    <script>
+    // cookieUtil.setCookie("name","Sogrey",7*24*60*60*100,"");console.log(cookieUtil.getCookie("name") )
+        if(sessionStorage.count){
+            sessionStorage.count = Number(sessionStorage.count)+1;
+        }else{
+            sessionStorage.count = 1;
+            }
+        alert("<br/>sessionStorage您访问该网站次数为："+sessionStorage.count+"次");
+    </script>
 </body>
 </html>
