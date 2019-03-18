@@ -1,11 +1,14 @@
 <html>
-    <head></head>
+
+<head></head>
+
 <body>
 
     <!-- <script src="./js/dictionary.js"/> -->
-    <script type="text/javascript"  src="./js/js-dictionary.js"></script>
-    <script type="text/javascript"  src="./js/js-MD5.js"></script>
-    <script type="text/javascript"  src="./js/js-cookieUtil.js"></script>
+    <script type="text/javascript" src="./js/js-dictionary.js"></script>
+    <script type="text/javascript" src="./js/js-MD5.js"></script>
+    <script type="text/javascript" src="./js/js-cookieUtil.js"></script>
+    <script type="text/javascript" src="./js/js-Array.js"></script>
     <!-- <script>
     var pbook = new Dictionary();
 pbook.add("Mike", "723");pbook.add("Mike", "733");
@@ -23,13 +26,87 @@ console.log(pbook.isExist("Mik2e"))
 alert(pbook.isExist("Mik2e"))
     </script> -->
     <script>
-    // cookieUtil.setCookie("name","Sogrey",7*24*60*60*100,"");console.log(cookieUtil.getCookie("name") )
-        if(sessionStorage.count){
-            sessionStorage.count = Number(sessionStorage.count)+1;
-        }else{
+        // cookieUtil.setCookie("name","Sogrey",7*24*60*60*100,"");console.log(cookieUtil.getCookie("name") )
+        if (sessionStorage.count) {
+            sessionStorage.count = Number(sessionStorage.count) + 1;
+        } else {
             sessionStorage.count = 1;
+        }
+        console.log("<br/>sessionStorage您访问该网站次数为：" + sessionStorage.count + "次");
+    </script>
+
+    <script>
+        var array1 = [1, 2, 3];
+        var array2 = [4, 5, 6];
+        array1.pushApply(array2);
+        console.log(array1);
+
+
+        //js中apply使用方法小议 - AlvinXiao - 博客园 http://www.cnblogs.com/xiaohongwu/archive/2011/06/15/2081237.html  
+        var myArr = new Array();
+
+        function fillRnd(arrLen) { //填入 arrLen个1-10的随机数字到数组  
+            for (var i = 0, arr = []; i < arrLen; i++) {
+                arr[i] = Math.ceil(Math.random() * 10);
             }
-        alert("<br/>sessionStorage您访问该网站次数为："+sessionStorage.count+"次");
+            return arr;
+        }
+
+        function getMax1(arr) {
+            var arrLen = arr.length;
+            for (var i = 0, ret = arr[0]; i < arrLen; i++) {
+                ret = Math.max(ret, arr[i]);
+            }
+            return ret;
+        }
+
+        function getMax2(arr) {
+            console.log(arr.length);
+
+            // var chunk = 10 * 10000;
+
+            // return Math.max.apply(null, arr);
+            // var min;
+            // var max;
+            // if (arr instanceof Array) {
+            //     arr.soft(function (a, b) {
+            //         return a - b;
+            //     })
+            //     min = arr[0];
+            //     max = arr[arr.length - 1];
+            //     console.log(min);
+            //     console.log(max);
+            // }
+            console.log(arr);
+            var max = -Infinity;
+            for (var i = 0; i < arr.length; i++) {
+                if (max <= arr[i]) max = arr[i];
+            }
+            console.log(max);
+
+            var min = Infinity;
+            for (var i = 0; i < arr.length; i++) {
+                if (min >= arr[i]) min = arr[i];
+            }
+            console.log(min);
+
+            //! max = Math.max.apply(null, arr);
+            return max;
+        }
+
+
+        myArr = fillRnd(25 * 10000); //生成20万个随机数填到数组  
+
+        var s1 = new Date().getTime(); //起始时间  
+        var max1 = getMax1(myArr);
+        var e1 = new Date().getTime(); //结束时间  
+        var max2 = getMax2(myArr);
+        var e2 = new Date().getTime(); //结束时间  
+
+        if (max1 !== max2)
+            console.log("error");
+        console.log((e2 - e1) + " ms，传统方式：" + (e1 - s1) + "ms");
     </script>
 </body>
+
 </html>

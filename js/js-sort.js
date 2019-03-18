@@ -1,20 +1,20 @@
 //https://segmentfault.com/a/1190000017814119?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly
 /*
-����һ��
+方案一：
 
-ʵ�ַ�ʽ�ǣ�ѡ��һ���м������Ϊ��׼�㣬����������ֱ�ȥ����Ȼ�׼��С��ֵ���ͱȻ�׼�����ֵ�����ݹ���ߵ�������ұߵ����飬��concatȥ��һ������ĺϲ���
+实现方式是，选择一个中间的数字为基准点，用两个数组分别去保存比基准数小的值，和比基准数大的值，最后递归左边的数组和右边的数组，用concat去做一个数组的合并。
 
-������δ���ķ�����
-ȱ�㣺
+对于这段代码的分析：
+缺点：
 
-��ȡ��׼��ʹ����һ��splice��������js��splice����������һ�ο����Ĳ����������������¸��Ӷ�ΪO(n)����O(n)��������������ģ�Ĵ�С������һ��ѭ��������
-��������ÿ��ִ�ж���ʹ�õ���������ռ䣬�����ռ临�Ӷȡ�
-concat��������������һ�ο����������ĸ��Ӷ�Ҳ����O(n)
-�Դ������ݵ�������˵��Ի�Ƚ���
-�ŵ㣺
+获取基准点使用了一个splice操作，在js中splice会对数组进行一次拷贝的操作，而它最坏的情况下复杂度为O(n)，而O(n)代表着针对数组规模的大小进行了一次循环操作。
+首先我们每次执行都会使用到两个数组空间，产生空间复杂度。
+concat操作会对数组进行一次拷贝，而它的复杂度也会是O(n)
+对大量数据的排序来说相对会比较慢
+优点：
 
-��������ˣ��ɶ���ǿ����������
-�ǳ��ʺ��������Ա�����
+代码简单明了，可读性强，易于理解
+非常适合用于面试笔试题
 */
 var quickSort = function(arr) {
   if (arr.length <= 1) {
@@ -37,14 +37,14 @@ var quickSort = function(arr) {
 
 
 /*
-��������
+方案二：
 
-��һ��ָ��iȥ����һ���ָ�
+用一个指针i去做了一个分割
 
-��ʼ��i = -1
-ѭ�����飬�ҵ���֧��С�����ͽ�i�����ƶ�һ��λ�ã�ͬʱ���±�i����λ��
-ѭ�����������֧����i+1λ�õ�Ԫ�ؽ��н���λ��
-������ǻ�õ�һ����iָ����Ϊ�ֽ�㣬�ָ�ɴ��±�0-i���� i+1�����һ��Ԫ�ء�
+初始化i = -1
+循环数组，找到比支点小的数就将i向右移动一个位置，同时与下标i交换位置
+循环结束后，最后将支点与i+1位置的元素进行交换位置
+最后我们会得到一个由i指针作为分界点，分割成从下标0-i，和 i+1到最后一个元素。
 */
 function swap(A, i, j) {
   const t = A[i];
@@ -54,9 +54,9 @@ function swap(A, i, j) {
 
 /**
  *
- * @param {*} A  ����
- * @param {*} p  ��ʼ�±�
- * @param {*} r  �����±� + 1
+ * @param {*} A  数组
+ * @param {*} p  起始下标
+ * @param {*} r  结束下标 + 1
  */
 function divide(A, p, r) {
   const x = A[r - 1];
@@ -76,9 +76,9 @@ function divide(A, p, r) {
 
 /**
  * 
- * @param {*} A  ����
- * @param {*} p  ��ʼ�±�
- * @param {*} r  �����±� + 1
+ * @param {*} A  数组
+ * @param {*} p  起始下标
+ * @param {*} r  结束下标 + 1
  */
 function qsort(A, p = 0, r) {
   r = r || A.length;
