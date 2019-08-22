@@ -23,68 +23,72 @@ function Dictionary() {
     // this.isEmpty = isEmpty;
 }
 
-/**
- * 增/改
- * @param {String} key 
- * @param {String} value 
- */
-Dictionary.prototype.add = function (key, value) {
-    this.datastore[key] = value;
-}
-/**
- * 删
- * @param {String} key 
- */
-Dictionary.prototype.remove = function (key) {
-    delete this.datastore[key];
-}
-/**
- * 查
- * @param {String} key 
- */
-Dictionary.prototype.find = function (key) {
-    return this.datastore[key];
-}
-/**
- * 是否存在
- * @param {String} key 
- */
-Dictionary.prototype.isExist = function (key) {
-    return !!this.datastore[key];
-}
-/**
- * 打印所有
- */
-Dictionary.prototype.showAll = function () {
-    var str = "";
-    for (var key in this.datastore) {
-        str += key + " -> " + this.datastore[key] + ";  "
-    }
-    console.log("显示全部：" + str);
-}
-/**
- * 统计总数
- */
-Dictionary.prototype.count = function () {
-    var n = 0;
-    for (var key in Object.keys(this.datastore)) {
-        ++n;
-    }
-    console.log("字典长度：" + n);
-    return n;
-}
-/**
- * 清空
- */
-Dictionary.prototype.clear = function () {
-    for (var key in this.datastore) {
+Dictionary.prototype = {
+    /**
+     * 增/改
+     * @param {String} key 
+     * @param {String} value 
+     */
+    add: function (key, value) {
+        this.datastore[key] = value;
+    },
+    /**
+     * 删
+     * @param {String} key 
+     */
+    remove: function (key) {
         delete this.datastore[key];
+    },
+    /**
+     * 查
+     * @param {String} key 
+     */
+    find: function (key) {
+        return this.datastore[key];
+    },
+    /**
+     * 是否存在
+     * @param {String} key 
+     */
+    isExist: function (key) {
+        return !!this.datastore[key];
+    },
+    /**
+     * 打印所有
+     */
+    showAll: function () {
+        var str = "";
+        for (var key in this.datastore) {
+            str += key + " -> " + this.datastore[key] + ";  "
+        }
+        console.log("显示全部：" + str);
+    },
+    /**
+     * 统计总数
+     */
+    count: function () {
+        var n = 0;
+        for (var key in Object.keys(this.datastore)) {
+            ++n;
+        }
+        console.log("字典长度：" + n);
+        return n;
+    },
+    /**
+     * 清空
+     */
+    clear: function () {
+        for (var key in this.datastore) {
+            delete this.datastore[key];
+        }
+    },
+    /**
+     * 判断是否为空
+     */
+    isEmpty: function () {
+        console.log(this.count())
+        return this.count() === 0
     }
 }
-/**
- * 判断是否为空
- */
-Dictionary.prototype.isEmpty = function () {
-    console.log(this.count())
-    return this.count() === 0
-}
+
+
