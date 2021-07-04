@@ -1,0 +1,24 @@
+{
+  "name": "js-tools",
+  "version": "1.0.0",
+  "description": "js 工具集",
+  "main": "paopao.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sogrey/js-tools.git"
+  },
+  "keywords": ["Javacript"],
+  "author": "Sogrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sogrey/js-tools/issues"
+  },
+  "homepage": "https://github.com/Sogrey/js-tools#readme"
+}

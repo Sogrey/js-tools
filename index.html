@@ -9,6 +9,9 @@
     <script type="text/javascript" src="./js/js-MD5.js"></script>
     <script type="text/javascript" src="./js/js-cookieUtil.js"></script>
     <script type="text/javascript" src="./js/js-Array.js"></script>
+
+    <script type="text/javascript" src="./src/SogreyJsTools.js"></script>
+    <script type="text/javascript" src="./src/plugins/DataUtils.js"></script>
     <!-- <script>
     var pbook = new Dictionary();
 pbook.add("Mike", "723");pbook.add("Mike", "733");
@@ -106,6 +109,12 @@ alert(pbook.isExist("Mik2e"))
         if (max1 !== max2)
             console.log("error");
         console.log((e2 - e1) + " ms，传统方式：" + (e1 - s1) + "ms");
+
+
+
+        console.log(SJT.DataUtils.isStatic);
+        console.log(SJT.DataUtils.isStatic(123));
+        
     </script>
 </body>
 
