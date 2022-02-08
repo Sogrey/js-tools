@@ -1,5 +1,7 @@
 # js-tools
 
+[Deprecated]
+
 js 工具集
 
 
